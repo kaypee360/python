@@ -1,6 +1,6 @@
 #!/usr/bin/env python3.7
 
-#BMI = (weight in kg / height in square meters)
+##BMI = (weight in kg / height in square meters)
 #Imperial version = BMI * 703
 
 def gather_info():
