@@ -1,0 +1,26 @@
+#!/usr/bin/python3
+import os, sys, glob, yaml
+os.chdir("/home/kajijola/kola/dev/Ansible_Inventory_Cloud/inventory/CloudHosting/SAIT/PA")
+a=[]
+tolu=[]
+for d in glob.glob("/home/kajijola/kola/dev/Ansible_Inventory_Cloud/inventory/*/*/PA/host.yaml"):
+    a.append(d)
+for b in a:
+    with open(b) as f:
+      list_doc = yaml.load(f)
+#      print list_doc
+      if 'host_jira_schoolname' in list_doc:
+        # print(host_jira_schoolname) #== "SAIT"
+         #for i in list_doc['host_jira_schoolname']:
+          #  print i
+        w=list_doc['host_jira_schoolname']
+        #print w
+        tolu.append(w)
+        print tolu 
+#    if host_destiny_one_bv  in list_doc:
+#       print sense
+#        if sense['host_jira_schoolname'] == "SAIT":
+#           sense["host_purchase_reservation"] = 1234
+    #for sense in list_doc:
+    #with open(b, "w") as f:
+    #  yaml.dump(list_doc, f)

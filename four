@@ -1,0 +1,12 @@
+#!/usr/bin/python3
+import os, sys, glob, yaml
+os.chdir("/home/kajijola/kola/dev/Ansible_Inventory_Cloud/inventory/CloudHosting/SAIT/PA")
+a=[]
+for d in glob.glob("/home/kajijola/kola/dev/Ansible_Inventory_Cloud/inventory/*/*/PA/host.yaml"):
+    a.append(d)
+for b in a:
+    with open(b) as f:
+      list_doc = yaml.load(f)
+      print(list_doc)
+    if host_ftp_groups in list_doc and host_ftp_groups == 'yes':
+       print(sense)
