@@ -1,0 +1,8 @@
+#!/usr/bin/python3
+import os, sys, glob
+from pathlib import Path
+for txt_file in pathlib.Path('/home/kajijola/kola/dev/Ansible_Inventory_Cloud/inventory/CloudHosting/SAIT/PA').glob('*.crt'):
+for path in Path('src').rglob('*.crt'):
+    sys.stdout = open("test.txt", "w")
+    print(path.name)
+    sys.stdout.close()
