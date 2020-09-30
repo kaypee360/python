@@ -1,0 +1,8 @@
+#!/usr/bin/python3
+import os, sys, glob
+
+os.chdir("/home/kajijola/kola/dev/Ansible_Inventory_Cloud/inventory/CloudHosting/SAIT/PA")
+for file in glob.glob("*.crt"):
+    sys.stdout = open("test.txt", "w")
+    print(file)
+    sys.stdout.close()

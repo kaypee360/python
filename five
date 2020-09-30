@@ -1,0 +1,28 @@
+#!/usr/bin/python3
+import os, sys, glob, yaml
+#os.chdir("/home/kajijola/kola/dev/Ansible_Inventory_Cloud/inventory/CloudHosting/SAIT/PA")
+a=[]
+new_yaml_data_dict = {
+        'bug_2': {
+            'sfx_id': '2', 
+            'moved_by': 'user2', 
+            'moved_date': '2018-01-30', 
+            'html_arch': 'filepath',
+            'olu': 'famo' }}
+
+for da in glob.glob("/home/kajijola/kola/dev/Ansible_Inventory_Cloud/inventory/*/*/PA/host.yaml"):
+    a.append(da)
+#print(a)
+for b in a:
+#  print(b)
+    with open(b,'r') as yamlfile:
+        cur_yaml = yaml.load(yamlfile)
+   # print(cur_yaml)
+    if "host_db_user" in cur_yaml and cur_yaml["host_db_user"] == 'SAIT_PROD':
+        cur_yaml.update(new_yaml_data_dict)
+        print(cur_yaml)
+        #print(b)
+        with open(b,'w') as yamlfile:
+          #if "host_db_user" in cur_yaml and cur_yaml["host_db_user"] == 'SAIT_PROD':
+           yaml.safe_dump(cur_yaml, yamlfile) # Also note the safe_dump
+    
