@@ -1,0 +1,1 @@
+find . -iname "FileZilla\ Server.xml" -exec sed -i 's/{{ fs_host_ftp_settings\[0]\[\"Minimum TLS version\"]|default(0) }}/{{ fs_host_ftp_settings\[0]\[\"Minimum TLS version\"]|default(2) }}/g' {} \;
